@@ -1,5 +1,7 @@
 # Recommendation engine system based on emotions
 
+**[Click here to view the PDF presentation with censors](https://github.com/ianux22/RECOMMENDATION-ENGINE-SYSTEM-BASED-ON-EMOTIONS/blob/master/Capstone_Prezo.pdf)**
+
 This project looks to develop a recommendation engine system for Frank N Magid & Associates, which identifies several factors to recommend, market, and substitute content to live streaming users of Magid's clients. Magid is a leading consulting and strategy company centred on delivering client-focused professional services geared towards consumer satisfaction. 
 The data was generated through a questionnaire completed by respondents after each movie. Questions were asked regarding the sentiments experienced during the movies. In addition, questions were also asked to understand any peculiarities pertaining to how they watched the movies to segment the viewers.  
 The project has 3 steps : 
@@ -43,4 +45,14 @@ At this point, we have created 11 clusters. Looking into them, we can find 2 mai
  - The presence of a "dumpster" cluster with all the stuff the algorithm wasn't able to classify. We solved the issue using a random forest model (with about 90% of accuracy) to redistribute those movies in the other clusters.
 
 At this point, We obtained 9 clusters/genres based on emotions rather than genres.
+
+## *Phase 2: XGBoost model to explore what affects rating*
+
+**[Code for Phase 2](https://github.com/ianux22/RECOMMENDATION-ENGINE-SYSTEM-BASED-ON-EMOTIONS/blob/master/XGBoost_Model/XGBClassifier%20for%20avg_rating.ipynb)**
+
+In this phase, we used a XGBoost model to explore what are the features that affect most the rating. 
+First of all, since the rating range was very short (between 3 and 5), we decided to create a new binary variable: movies with rating 4 or more, are considered "good movies", while the other "bad movies". This way, we can face this problem as a classification task rather than a regression one.
+Once created the variable, I divided the data into training, test and validation set, then I tuned the model achieving over 80% of accuracy at the end of the process.
+Next, we took advatage of the XGBoost model looking at the feature importance in order to see what are the most important features for a good rating.
+
 
