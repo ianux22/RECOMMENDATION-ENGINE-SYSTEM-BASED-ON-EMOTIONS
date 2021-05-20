@@ -55,4 +55,14 @@ First of all, since the rating range was very short (between 3 and 5), we decide
 Once created the variable, I divided the data into training, test and validation set, then I tuned the model achieving over 80% of accuracy at the end of the process.
 Next, we took advatage of the XGBoost model looking at the feature importance in order to see what are the most important features for a good rating.
 
+## *Phase 3: Creation of a recommendation system engine*
 
+**[Code for phase 3](https://github.com/ianux22/RECOMMENDATION-ENGINE-SYSTEM-BASED-ON-EMOTIONS/blob/master/Recommendation_system_engine/Recommendation%20Engine%20System%20(with%20user%20features).ipynb)**
+
+To create a recommendation system engine we need to compute the similarity among all the movies to create what is called similarity matrix. 
+The similarity matrix is a square matrix n x n, where n is the number of movies, in which each column and each row is a movie. It is like the correlation matrix, but instead of having features, this time we have movies, and instead of correlations, the values are similarities.
+To compute the similarity score I used 3 metrics: Jaccard index, cosine similarity and euclidean distance. The cosine similarity resulted to be the metric with the best performance.
+
+After the similarity matrix, another matrix is required, which is essentially the result of the cross tabulation between users and movies. If users X has watched movie Y, than the value will be 1, otherwise 0. This helps to filter the recommendations. In this way, a movie the user has already watched would not be recommended to the user again.
+
+Now we're ready to create our recommender. The function ***cosine_recommender*** returns the 10 movies most similar to the input one, then the recommendations are filtered with the user's movie list to eliminate movies already watched by the user.
