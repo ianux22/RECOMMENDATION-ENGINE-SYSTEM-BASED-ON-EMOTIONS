@@ -1,4 +1,4 @@
-# RECOMMENDATION ENGINE SYSTEM BASED ON EMOTIONS
+# Recommendation engine system based on emotions
 
 This project looks to develop a recommendation engine system for Frank N Magid & Associates, which identifies several factors to recommend, market, and substitute content to live streaming users of Magid's clients. Magid is a leading consulting and strategy company centred on delivering client-focused professional services geared towards consumer satisfaction. 
 The data was generated through a questionnaire completed by respondents after each movie. Questions were asked regarding the sentiments experienced during the movies. In addition, questions were also asked to understand any peculiarities pertaining to how they watched the movies to segment the viewers.  
